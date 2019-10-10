@@ -44,13 +44,13 @@ public class HomeController {
         return "show";
     }
 
-    @RequestMapping("/detail/{id}")
+    @RequestMapping("/update/{id}")
     public String updateCourse(@PathVariable("id") long id, Model model){
         model.addAttribute("course", courseRepository.findById(id).get());
         return "courseform";
     }
 
-    @RequestMapping("/detail/{id}")
+    @RequestMapping("/delete/{id}")
     public String delCourse(@PathVariable("id") long id) {
         courseRepository.deleteById(id);
         return "redirect:/";
